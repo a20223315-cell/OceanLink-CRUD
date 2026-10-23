@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>OceanLink - Detalle de capacidad</title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">MENÚ PRINCIPAL</div>
+<nav>
+<a aria-label="Capacidad" class="active" href="cp_capacity.html" title="Capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span><span class="nav-label">Capacidad</span></a>
+<a aria-label="Solicitudes" href="cp_requests.html" title="Solicitudes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="nav-label">Solicitudes</span></a>
+<a aria-label="Clientes" href="ClienteServlet" title="Clientes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-building"></i></span><span class="nav-label">Clientes</span></a>
+<a aria-label="Servicios" href="ServicioServlet" title="Servicios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-network-wired"></i></span><span class="nav-label">Servicios</span></a>
+</nav>
+<div class="sidebar-footer">
+<a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión">
+<i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span>
+</a>
+</div>
+</aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">Sistema de Gestión de Red</strong></div>
+<div class="session-data">
+<span class="role">Planificador de capacidad</span>
+<span class="user" title="Matías Aguilar · Planificador de capacidad">Matías Aguilar <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading"><h1>Detalle de capacidad del segmento SEG-101</h1><p>Consulte la capacidad total, utilizada, reservada y disponible del segmento.</p></div>
+<div class="back-row"><a class="secondary-button" href="cp_capacity.html"><i class="fa-solid fa-arrow-left"></i> Volver a capacidad</a></div>
+<div class="cards">
+<article class="summary-card"><div class="metric-icon info"><i class="fa-solid fa-database"></i></div><span class="metric-label">Capacidad total</span><strong>20 Tbps</strong></article>
+<article class="summary-card"><div class="metric-icon warning"><i class="fa-solid fa-chart-line"></i></div><span class="metric-label">Utilizada</span><strong>16 Tbps</strong></article>
+<article class="summary-card"><div class="metric-icon info"><i class="fa-solid fa-bookmark"></i></div><span class="metric-label">Reservada</span><strong>0 Tbps</strong></article>
+<article class="summary-card"><div class="metric-icon ok"><i class="fa-solid fa-circle-check"></i></div><span class="metric-label">Disponible</span><strong>4 Tbps</strong></article>
+</div>
+<article class="panel">
+<div class="panel-heading"><div><h2>Servicios asignados</h2><p>Servicios que consumen o reservan capacidad en el segmento.</p></div><a class="secondary-button" href="cp_capacity_history.html"><i class="fa-solid fa-clock-rotate-left"></i> Ver historial</a></div>
+<div class="table-container"><table><thead><tr><th>Código</th><th>Cliente</th><th class="cell-center">Capacidad (Tbps)</th><th class="cell-center">Estado</th></tr></thead>
+<tbody>
+<tr><td>SRV-901</td><td>Telco Global</td><td class="cell-center">2</td><td class="cell-center"><span class="status ok">Activo</span></td></tr>
+<tr><td>SRV-905</td><td>Pacífico Net</td><td class="cell-center">1</td><td class="cell-center"><span class="status info">Reservado</span></td></tr>
+<tr><td>SRV-910</td><td>Red Andina</td><td class="cell-center">13</td><td class="cell-center"><span class="status ok">Activo</span></td></tr>
+</tbody></table></div>
+</article>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>
+   OceanLink - Capacidad por segmento
+  </title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">
+     MENÚ PRINCIPAL
+    </div>
+<nav>
+<a aria-label="Capacidad" class="active" href="cp_capacity.html" title="Capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span><span class="nav-label">Capacidad</span></a>
+<a aria-label="Solicitudes" href="cp_requests.html" title="Solicitudes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="nav-label">Solicitudes</span></a>
+<a aria-label="Clientes" href="ClienteServlet" title="Clientes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-building"></i></span><span class="nav-label">Clientes</span></a>
+<a aria-label="Servicios" href="ServicioServlet" title="Servicios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-network-wired"></i></span><span class="nav-label">Servicios</span></a>
+</nav>
+<div class="sidebar-footer"><a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión"><i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span></a></div></aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">
+      Sistema de Gestión de Red
+     </strong></div>
+<div class="session-data">
+<span class="role">
+       Planificador de capacidad
+      </span>
+<span class="user" title="Matías Aguilar · Planificador de capacidad">Matías Aguilar <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading">
+<h1>
+       Capacidad por segmento
+      </h1>
+<p>
+       Identifique segmentos con poca disponibilidad y priorice las solicitudes de capacidad.
+      </p>
+</div>
+<article class="panel">
+<div class="panel-heading">
+<div>
+<h2>
+         Disponibilidad por segmento
+        </h2>
+<p>
+         Compare capacidad total, utilizada, reservada y disponible.
+        </p>
+</div>
+<a class="secondary-button" href="cp_capacity_history.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial de utilización</a>
+</div>
+<div class="filter-panel">
+<div class="filter-grid" role="search">
+<div class="filter-field">
+<label for="ol-control-0">Filtrar por segmento</label>
+<input placeholder="Ej. SEG-101 o Lurín - Valparaíso" type="search" id="ol-control-0">
+</div>
+<div class="filter-field">
+<label for="ol-control-1">Filtrar por utilización</label>
+<select id="ol-control-1">
+<option selected="">
+           Todos
+          </option>
+<option>
+           Normal (&lt;80%)
+          </option>
+<option>
+           Alta (80%-95%)
+          </option>
+<option>
+           Crítica (&gt;95%)
+          </option>
+</select>
+</div>
+<div class="filter-actions">
+<button class="primary-button filter-submit" type="button">
+<i class="fa-solid fa-filter">
+</i>
+          Filtrar
+         </button>
+</div>
+</div>
+</div>
+<div class="table-container">
+<table data-page-size="10" data-paginate="true">
+<thead>
+<tr>
+<th>
+           Segmento
+          </th>
+<th class="cell-center">Total (Tbps)</th>
+<th class="cell-center">Utilizada (Tbps)</th>
+<th class="cell-center">Reservada (Tbps)</th>
+<th class="cell-center">Disponible (Tbps)</th>
+<th class="cell-center">Utilización (%)</th>
+<th class="action-cell">
+           Acción
+          </th>
+</tr>
+</thead>
+<tbody><tr><td><div class="segment-cell"><strong>SEG-101</strong><small>Lurín - Valparaíso</small></div></td><td class="cell-center">20</td><td class="cell-center">16</td><td class="cell-center">0</td><td class="cell-center">4</td><td class="cell-center usage-cell"><div class="utilization-cell utilization-high"><strong>80.0 · Alta</strong><div class="progress"><span style="width:80%"></span></div></div></td><td class="action-cell"><a class="icon-action" href="cp_capacity_detail.html?codigo=SEG-101" title="Ver detalle de SEG-101" aria-label="Ver detalle de SEG-101"><i class="fa-regular fa-eye" aria-hidden="true"></i></a></td></tr><tr><td><div class="segment-cell"><strong>SEG-102</strong><small>Lurín - Buenaventura</small></div></td><td class="cell-center">40</td><td class="cell-center">10</td><td class="cell-center">1</td><td class="cell-center">29</td><td class="cell-center usage-cell"><div class="utilization-cell utilization-normal"><strong>25.0 · Normal</strong><div class="progress"><span style="width:25%"></span></div></div></td><td class="action-cell"><a class="icon-action" href="cp_capacity_detail.html?codigo=SEG-102" title="Ver detalle de SEG-102" aria-label="Ver detalle de SEG-102"><i class="fa-regular fa-eye" aria-hidden="true"></i></a></td></tr><tr><td><div class="segment-cell"><strong>SEG-103</strong><small>Valparaíso - Punta Arenas</small></div></td><td class="cell-center">15</td><td class="cell-center">14.5</td><td class="cell-center">0</td><td class="cell-center">0.5</td><td class="cell-center usage-cell"><div class="utilization-cell utilization-critical"><strong>96.7 · Crítica</strong><div class="progress"><span style="width:96.6667%"></span></div></div></td><td class="action-cell"><a class="icon-action" href="cp_capacity_detail.html?codigo=SEG-103" title="Ver detalle de SEG-103" aria-label="Ver detalle de SEG-103"><i class="fa-regular fa-eye" aria-hidden="true"></i></a></td></tr><tr><td><div class="segment-cell"><strong>SEG-205</strong><small>Buenaventura - Panamá</small></div></td><td class="cell-center">8</td><td class="cell-center">6.7</td><td class="cell-center">0</td><td class="cell-center">1.3</td><td class="cell-center usage-cell"><div class="utilization-cell utilization-high"><strong>83.8 · Alta</strong><div class="progress"><span style="width:83.75%"></span></div></div></td><td class="action-cell"><a class="icon-action" href="cp_capacity_detail.html?codigo=SEG-205" title="Ver detalle de SEG-205" aria-label="Ver detalle de SEG-205"><i class="fa-regular fa-eye" aria-hidden="true"></i></a></td></tr><tr><td><div class="segment-cell"><strong>SEG-310</strong><small>Máncora - Lurín</small></div></td><td class="cell-center">6</td><td class="cell-center">4.1</td><td class="cell-center">0</td><td class="cell-center">1.9</td><td class="cell-center usage-cell"><div class="utilization-cell utilization-normal"><strong>68.3 · Normal</strong><div class="progress"><span style="width:68.3333%"></span></div></div></td><td class="action-cell"><a class="icon-action" href="cp_capacity_detail.html?codigo=SEG-310" title="Ver detalle de SEG-310" aria-label="Ver detalle de SEG-310"><i class="fa-regular fa-eye" aria-hidden="true"></i></a></td></tr><tr><td><div class="segment-cell"><strong>SEG-411</strong><small>Punta Arenas - Panamá</small></div></td><td class="cell-center">4</td><td class="cell-center">0</td><td class="cell-center">0</td><td class="cell-center">4</td><td class="cell-center usage-cell"><div class="utilization-cell utilization-normal"><strong>0.0 · Normal</strong><div class="progress"><span style="width:0%"></span></div></div></td><td class="action-cell"><a class="icon-action" href="cp_capacity_detail.html?codigo=SEG-411" title="Ver detalle de SEG-411" aria-label="Ver detalle de SEG-411"><i class="fa-regular fa-eye" aria-hidden="true"></i></a></td></tr></tbody>
+</table>
+</div>
+</article>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+
+</body></html>

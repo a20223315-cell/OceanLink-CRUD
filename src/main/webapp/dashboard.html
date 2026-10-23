@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>
+   OceanLink - Panel general
+  </title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">
+     MENÚ PRINCIPAL
+    </div>
+<nav>
+<a aria-label="Panel general" class="active" href="dashboard.html" title="Panel general"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-chart-pie"></i></span><span class="nav-label">Panel general</span></a>
+<a aria-label="Usuarios" href="UsuarioServlet" title="Usuarios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-users"></i></span><span class="nav-label">Usuarios</span></a>
+<a aria-label="Estaciones" href="EstacionServlet" title="Estaciones"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-tower-broadcast"></i></span><span class="nav-label">Estaciones</span></a>
+<a aria-label="Segmentos" href="SegmentoServlet" title="Segmentos"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-diagram-project"></i></span><span class="nav-label">Segmentos</span></a>
+<a aria-label="Solicitudes de capacidad" href="SolicitudCapacidadServlet" title="Solicitudes de capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-file-circle-plus"></i></span><span class="nav-label">Solicitudes de capacidad</span></a>
+</nav>
+<div class="sidebar-footer"><a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión"><i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span></a></div></aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">
+      Sistema de Gestión de Red
+     </strong></div>
+<div class="session-data">
+<span class="role">
+       Administrador
+      </span>
+<span class="user" title="Alonso Rosales · Administrador">Alonso Rosales <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading">
+<h1>
+       Panel general
+      </h1>
+<p>
+       Revise el estado general de la plataforma y los elementos de infraestructura registrados.
+      </p>
+</div>
+<div class="cards">
+<article class="summary-card">
+<div class="metric-icon info">
+<i class="fa-solid fa-users">
+</i>
+</div>
+<span class="metric-label">
+        Usuarios activos
+       </span>
+<strong>5</strong>
+</article>
+<article class="summary-card">
+<div class="metric-icon info">
+<i class="fa-solid fa-anchor">
+</i>
+</div>
+<span class="metric-label">
+        Estaciones registradas
+       </span>
+<strong>6</strong>
+</article>
+<article class="summary-card">
+<div class="metric-icon ok">
+<i class="fa-solid fa-network-wired">
+</i>
+</div>
+<span class="metric-label">
+        Segmentos operativos
+       </span>
+<strong>2</strong>
+</article>
+<article class="summary-card">
+<div class="metric-icon danger">
+<i class="fa-solid fa-triangle-exclamation">
+</i>
+</div>
+<span class="metric-label">
+        Incidencias activas
+       </span>
+<strong>4</strong>
+</article>
+</div>
+<article class="panel">
+<div class="panel-heading">
+<div>
+<h2>
+         Resumen de infraestructura
+        </h2>
+<p>
+         Estado reciente de los elementos que requieren seguimiento administrativo.
+        </p>
+</div>
+</div>
+<div class="table-container">
+<table data-page-size="10" data-paginate="true">
+<thead>
+<tr>
+<th>
+           Elemento
+          </th>
+<th class="cell-center">
+           Identificador
+          </th>
+<th class="cell-center">
+           Estado
+          </th>
+<th class="cell-center">
+           Última actualización
+          </th>
+</tr>
+</thead>
+<tbody><tr><td>Segmento</td><td class="cell-center">SEG-101</td><td class="cell-center"><span class="status ok">Operativo</span></td><td class="cell-center">20/09/2026</td></tr><tr><td>Segmento</td><td class="cell-center">SEG-102</td><td class="cell-center"><span class="status ok">Operativo</span></td><td class="cell-center">20/09/2026</td></tr><tr><td>Segmento</td><td class="cell-center">SEG-103</td><td class="cell-center"><span class="status warning">Degradado</span></td><td class="cell-center">20/09/2026</td></tr><tr><td>Segmento</td><td class="cell-center">SEG-205</td><td class="cell-center"><span class="status warning">Degradado</span></td><td class="cell-center">20/09/2026</td></tr><tr><td>Segmento</td><td class="cell-center">SEG-310</td><td class="cell-center"><span class="status info">En mantenimiento</span></td><td class="cell-center">20/09/2026</td></tr><tr><td>Segmento</td><td class="cell-center">SEG-411</td><td class="cell-center"><span class="status danger">Fuera de servicio</span></td><td class="cell-center">20/09/2026</td></tr><tr><td>Estación</td><td class="cell-center">EST-004</td><td class="cell-center"><span class="status info">En mantenimiento</span></td><td class="cell-center">20/09/2026</td></tr></tbody>
+</table>
+</div>
+</article>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+
+</body></html>

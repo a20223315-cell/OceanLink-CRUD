@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>OceanLink - Historial de utilización</title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">MENÚ PRINCIPAL</div>
+<nav>
+<a aria-label="Capacidad" class="active" href="cp_capacity.html" title="Capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span><span class="nav-label">Capacidad</span></a>
+<a aria-label="Solicitudes" href="cp_requests.html" title="Solicitudes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="nav-label">Solicitudes</span></a>
+<a aria-label="Clientes" href="ClienteServlet" title="Clientes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-building"></i></span><span class="nav-label">Clientes</span></a>
+<a aria-label="Servicios" href="ServicioServlet" title="Servicios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-network-wired"></i></span><span class="nav-label">Servicios</span></a>
+</nav>
+<div class="sidebar-footer">
+<a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión">
+<i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span>
+</a>
+</div>
+</aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">Sistema de Gestión de Red</strong></div>
+<div class="session-data">
+<span class="role">Planificador de capacidad</span>
+<span class="user" title="Matías Aguilar · Planificador de capacidad">Matías Aguilar <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading"><h1>Historial de utilización</h1><p>Revise la evolución histórica de la utilización de la red y de cada segmento.</p></div>
+<div class="back-row"><a class="secondary-button" href="cp_capacity.html"><i class="fa-solid fa-arrow-left"></i> Volver a capacidad</a></div>
+<article class="panel">
+<div class="filter-panel"><div class="filter-grid" role="search">
+<div class="filter-field"><label for="ol-control-0">Segmento</label><select class="history-segment-select" id="ol-control-0"><option value="Toda la red" selected="">Toda la red</option><option value="SEG-101">SEG-101 · Lurín - Valparaíso</option><option value="SEG-102">SEG-102 · Lurín - Buenaventura</option><option value="SEG-103">SEG-103 · Valparaíso - Punta Arenas</option><option value="SEG-205">SEG-205 · Buenaventura - Panamá</option><option value="SEG-310">SEG-310 · Máncora - Lurín</option><option value="SEG-411">SEG-411 · Punta Arenas - Panamá</option></select></div>
+<div class="filter-field"><label for="ol-control-1">Fecha desde</label><input type="date" value="2026-08-20" id="ol-control-1"></div>
+<div class="filter-field"><label for="ol-control-2">Fecha hasta</label><input type="date" value="2026-09-30" id="ol-control-2"></div>
+<div class="filter-actions"><button class="primary-button filter-submit" type="button"><i class="fa-solid fa-filter"></i> Filtrar</button></div>
+</div></div>
+<div class="panel-heading history-heading"><div><h2>Utilización de toda la red</h2><p>20/08/2026 – 30/09/2026</p></div></div>
+<div aria-label="Resumen del periodo" class="history-kpis">
+<div class="history-kpi"><span>Promedio</span><strong data-history-average="">57.9%</strong></div>
+<div class="history-kpi"><span>Máximo</span><strong data-history-max="">59.0%</strong></div>
+<div class="history-kpi"><span>Tendencia</span><strong data-history-trend="">+2.2 pp</strong></div>
+</div>
+<div aria-label="Evolución mensual de la utilización" class="history-line-chart" data-series-global="41.2708,43.4818,45.6927,47.9036,50.1146,52.3255,54.5365,56.7474,58.9583" data-series-seg101="56,59,62,65,68,71,74,77,80" data-series-seg102="17.5,18.4375,19.375,20.3125,21.25,22.1875,23.125,24.0625,25" data-series-seg103="67.6667,71.2917,74.9167,78.5417,82.1667,85.7917,89.4167,93.0417,96.6667" data-series-seg205="58.625,61.7656,64.9062,68.0469,71.1875,74.3281,77.4688,80.6094,83.75" data-series-seg310="47.8333,50.3958,52.9583,55.5208,58.0833,60.6458,63.2083,65.7708,68.3333" data-series-seg411="0,0,0,0,0,0,0,0,0" role="img">
+</div>
+</article>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+</body></html>

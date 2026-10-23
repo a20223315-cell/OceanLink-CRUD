@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0;url=SegmentoServlet">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>
+   OceanLink - Segmentos submarinos
+  </title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">
+     MENÚ PRINCIPAL
+    </div>
+<nav>
+<a aria-label="Panel general" href="dashboard.html" title="Panel general"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-chart-pie"></i></span><span class="nav-label">Panel general</span></a>
+<a aria-label="Usuarios" href="UsuarioServlet" title="Usuarios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-users"></i></span><span class="nav-label">Usuarios</span></a>
+<a aria-label="Estaciones" href="EstacionServlet" title="Estaciones"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-tower-broadcast"></i></span><span class="nav-label">Estaciones</span></a>
+<a aria-label="Segmentos" class="active" href="SegmentoServlet" title="Segmentos"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-diagram-project"></i></span><span class="nav-label">Segmentos</span></a>
+<a aria-label="Solicitudes de capacidad" href="SolicitudCapacidadServlet" title="Solicitudes de capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-file-circle-plus"></i></span><span class="nav-label">Solicitudes de capacidad</span></a>
+</nav>
+<div class="sidebar-footer"><a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión"><i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span></a></div></aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">
+      Sistema de Gestión de Red
+     </strong></div>
+<div class="session-data">
+<span class="role">
+       Administrador
+      </span>
+<span class="user" title="Alonso Rosales · Administrador">Alonso Rosales <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading">
+<h1>
+       Segmentos submarinos
+      </h1>
+<p>
+       Administre la información base de los segmentos que conectan las Estaciones de aterrizaje.
+      </p>
+</div>
+<article class="panel">
+<div class="panel-heading">
+<div>
+<h2>
+         Segmentos submarinos
+        </h2>
+<p>
+         Consulte conexiones, capacidad nominal y estado operativo.
+        </p>
+</div>
+<a class="primary-button" href="#modal-segmento">
+<i class="fa-solid fa-plus">
+</i>
+        Registrar segmento
+       </a>
+</div>
+<div class="filter-panel">
+<div class="filter-grid" role="search">
+<div class="filter-field">
+<label for="ol-control-0">Filtrar por código</label>
+<input placeholder="Ej. SEG-101" type="search" id="ol-control-0">
+</div>
+<div class="filter-field">
+<label for="ol-control-1">Filtrar por estado</label>
+<select id="ol-control-1">
+<option selected="">
+           Todos
+          </option>
+<option>
+           Operativo
+          </option>
+<option>
+           Degradado
+          </option>
+<option>
+           En mantenimiento
+          </option>
+<option>
+           Fuera de servicio
+          </option>
+</select>
+</div>
+<div class="filter-actions">
+<button class="primary-button filter-submit" type="button">
+<i class="fa-solid fa-filter">
+</i>
+          Filtrar
+         </button>
+</div>
+</div>
+</div>
+<div class="table-container">
+<table data-page-size="10" data-paginate="true">
+<thead>
+<tr>
+<th class="cell-center">Código</th>
+<th>
+           Origen
+          </th>
+<th>
+           Destino
+          </th>
+<th class="cell-center">Capacidad total (Tbps)</th>
+<th class="cell-center">
+           Estado
+          </th>
+<th class="action-cell">
+           Acciones
+          </th>
+</tr>
+</thead>
+<tbody><tr><td class="cell-center">SEG-101</td><td>Lurín</td><td>Valparaíso</td><td class="cell-center">20</td><td class="cell-center"><span class="status ok">Operativo</span></td><td class="action-cell"><div class="icon-actions"><a class="icon-action" href="admin_segment_detail.html?codigo=SEG-101" title="Ver detalle de SEG-101" aria-label="Ver detalle de SEG-101"><i class="fa-regular fa-eye" aria-hidden="true"></i></a><a class="icon-action positive" href="admin_segment_stations.html?codigo=SEG-101" title="Gestionar estaciones" aria-label="Gestionar estaciones de SEG-101"><i class="fa-solid fa-link"></i></a></div></td></tr><tr><td class="cell-center">SEG-102</td><td>Lurín</td><td>Buenaventura</td><td class="cell-center">40</td><td class="cell-center"><span class="status ok">Operativo</span></td><td class="action-cell"><div class="icon-actions"><a class="icon-action" href="admin_segment_detail.html?codigo=SEG-102" title="Ver detalle de SEG-102" aria-label="Ver detalle de SEG-102"><i class="fa-regular fa-eye" aria-hidden="true"></i></a><a class="icon-action positive" href="admin_segment_stations.html?codigo=SEG-102" title="Gestionar estaciones" aria-label="Gestionar estaciones de SEG-102"><i class="fa-solid fa-link"></i></a></div></td></tr><tr><td class="cell-center">SEG-103</td><td>Valparaíso</td><td>Punta Arenas</td><td class="cell-center">15</td><td class="cell-center"><span class="status warning">Degradado</span></td><td class="action-cell"><div class="icon-actions"><a class="icon-action" href="admin_segment_detail.html?codigo=SEG-103" title="Ver detalle de SEG-103" aria-label="Ver detalle de SEG-103"><i class="fa-regular fa-eye" aria-hidden="true"></i></a><a class="icon-action positive" href="admin_segment_stations.html?codigo=SEG-103" title="Gestionar estaciones" aria-label="Gestionar estaciones de SEG-103"><i class="fa-solid fa-link"></i></a></div></td></tr><tr><td class="cell-center">SEG-205</td><td>Buenaventura</td><td>Panamá</td><td class="cell-center">8</td><td class="cell-center"><span class="status warning">Degradado</span></td><td class="action-cell"><div class="icon-actions"><a class="icon-action" href="admin_segment_detail.html?codigo=SEG-205" title="Ver detalle de SEG-205" aria-label="Ver detalle de SEG-205"><i class="fa-regular fa-eye" aria-hidden="true"></i></a><a class="icon-action positive" href="admin_segment_stations.html?codigo=SEG-205" title="Gestionar estaciones" aria-label="Gestionar estaciones de SEG-205"><i class="fa-solid fa-link"></i></a></div></td></tr><tr><td class="cell-center">SEG-310</td><td>Máncora</td><td>Lurín</td><td class="cell-center">6</td><td class="cell-center"><span class="status info">En mantenimiento</span></td><td class="action-cell"><div class="icon-actions"><a class="icon-action" href="admin_segment_detail.html?codigo=SEG-310" title="Ver detalle de SEG-310" aria-label="Ver detalle de SEG-310"><i class="fa-regular fa-eye" aria-hidden="true"></i></a><a class="icon-action positive" href="admin_segment_stations.html?codigo=SEG-310" title="Gestionar estaciones" aria-label="Gestionar estaciones de SEG-310"><i class="fa-solid fa-link"></i></a></div></td></tr><tr><td class="cell-center">SEG-411</td><td>Punta Arenas</td><td>Panamá</td><td class="cell-center">4</td><td class="cell-center"><span class="status danger">Fuera de servicio</span></td><td class="action-cell"><div class="icon-actions"><a class="icon-action" href="admin_segment_detail.html?codigo=SEG-411" title="Ver detalle de SEG-411" aria-label="Ver detalle de SEG-411"><i class="fa-regular fa-eye" aria-hidden="true"></i></a><a class="icon-action positive" href="admin_segment_stations.html?codigo=SEG-411" title="Gestionar estaciones" aria-label="Gestionar estaciones de SEG-411"><i class="fa-solid fa-link"></i></a></div></td></tr></tbody>
+</table>
+</div>
+</article>
+<div aria-modal="true" class="modal" id="modal-segmento" role="dialog" tabindex="-1">
+<button aria-label="Cerrar ventana" class="modal-background" type="button"></button>
+<div class="modal-box">
+<div class="modal-header">
+<h2>
+         Datos del segmento
+        </h2>
+<button aria-label="Cerrar" class="modal-close" title="Cerrar" type="button"><i aria-hidden="true" class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="modal-body">
+<p class="modal-intro">
+         Seleccione las estaciones relacionadas y complete su capacidad y estado.
+        </p>
+<form>
+<div class="form-row">
+<div class="form-field">
+<label for="ol-control-2">
+            Origen
+           </label>
+<select required="" id="ol-control-2"><option value="EST-001" selected="">Lurín</option><option value="EST-002">Valparaíso</option><option value="EST-003">Buenaventura</option><option value="EST-004">Máncora</option><option value="EST-005">Punta Arenas</option><option value="EST-006">Panamá</option></select>
+<small class="field-error">
+            Seleccione una opción.
+           </small>
+</div>
+<div class="form-field">
+<label for="ol-control-3">
+            Destino
+           </label>
+<select required="" id="ol-control-3"><option value="EST-001">Lurín</option><option value="EST-002" selected="">Valparaíso</option><option value="EST-003">Buenaventura</option><option value="EST-004">Máncora</option><option value="EST-005">Punta Arenas</option><option value="EST-006">Panamá</option></select>
+<small class="field-error">
+            Seleccione una opción.
+           </small>
+</div>
+</div>
+<div class="form-row">
+<div class="form-field">
+<label for="ol-control-4">
+            Capacidad total
+           </label>
+<input placeholder="Tbps" required="" type="number" min="0.001" step="0.001" id="ol-control-4">
+<small class="field-error">
+            Ingrese la capacidad.
+           </small>
+</div>
+<div class="form-field">
+<label for="ol-control-5">
+            Estado
+           </label>
+<select required="" id="ol-control-5">
+<option selected="">
+             Operativo
+            </option>
+<option>
+             Degradado
+            </option>
+<option>
+             En mantenimiento
+            </option>
+<option>
+             Fuera de servicio
+            </option>
+</select>
+<small class="field-error">
+            Seleccione una opción.
+           </small>
+</div>
+</div>
+<div class="form-actions">
+<button class="danger-button modal-cancel-button" type="button">
+           Cancelar
+          </button>
+<button class="primary-button" type="button">
+           Guardar segmento
+          </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+
+</body></html>

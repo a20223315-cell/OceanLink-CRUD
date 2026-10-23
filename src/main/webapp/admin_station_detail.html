@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>OceanLink - Detalle de la estación</title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">MENÚ PRINCIPAL</div>
+<nav>
+<a aria-label="Panel general" href="dashboard.html" title="Panel general"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-chart-pie"></i></span><span class="nav-label">Panel general</span></a>
+<a aria-label="Usuarios" href="UsuarioServlet" title="Usuarios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-users"></i></span><span class="nav-label">Usuarios</span></a>
+<a aria-label="Estaciones" class="active" href="EstacionServlet" title="Estaciones"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-tower-broadcast"></i></span><span class="nav-label">Estaciones</span></a>
+<a aria-label="Segmentos" href="SegmentoServlet" title="Segmentos"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-diagram-project"></i></span><span class="nav-label">Segmentos</span></a>
+<a aria-label="Solicitudes de capacidad" href="SolicitudCapacidadServlet" title="Solicitudes de capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-file-circle-plus"></i></span><span class="nav-label">Solicitudes de capacidad</span></a>
+</nav>
+<div class="sidebar-footer">
+<a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión">
+<i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span>
+</a>
+</div>
+</aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">Sistema de Gestión de Red</strong></div>
+<div class="session-data">
+<span class="role">Administrador</span>
+<span class="user" title="Alonso Rosales · Administrador">Alonso Rosales <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading"><h1>Detalle de la estación de aterrizaje EST-001</h1><p>Revise la información de la estación y los segmentos conectados.</p></div>
+<div class="back-row"><a class="secondary-button" href="EstacionServlet"><i class="fa-solid fa-arrow-left"></i> Volver a estaciones</a></div>
+<article class="panel">
+<div class="panel-heading"><div><h2>Estación Lurín</h2><p>Información general de la estación de aterrizaje.</p></div><div class="detail-actions"><a class="primary-button" href="#modal-editar-estacion"><i class="fa-solid fa-pen"></i> Editar estación</a></div></div>
+<div class="detail-grid">
+<div class="detail-item"><strong>Código</strong><span>EST-001</span></div>
+<div class="detail-item"><strong>Estado</strong><span class="status ok">Operativa</span></div>
+<div class="detail-item"><strong>Nombre</strong><span>Estación Lurín</span></div>
+<div class="detail-item"><strong>Ubicación</strong><span>Lima, Perú</span></div>
+<div class="detail-item"><strong>Capacidad de energía</strong><span>500 kW</span></div>
+<div class="detail-item"><strong>Fecha de alta</strong><span>15/01/2020</span></div>
+</div>
+</article>
+<article class="panel">
+<div class="panel-heading"><div><h2>Segmentos conectados</h2><p>Relaciones actuales de esta estación.</p></div></div>
+<div class="table-container"><table><thead><tr><th>Código</th><th>Destino</th><th class="cell-center">Capacidad total (Tbps)</th><th class="cell-center">Estado</th><th class="action-cell">Acción</th></tr></thead>
+<tbody>
+<tr><td>SEG-101</td><td>Estación Valparaíso</td><td class="cell-center">20</td><td class="cell-center"><span class="status ok">Operativo</span></td><td class="action-cell"><a aria-label="Ver segmento" class="icon-action" href="admin_segment_detail.html?codigo=SEG-101" title="Ver segmento"><i class="fa-solid fa-eye"></i></a></td></tr>
+<tr><td>SEG-102</td><td>Estación Buenaventura</td><td class="cell-center">40</td><td class="cell-center"><span class="status ok">Operativo</span></td><td class="action-cell"><a aria-label="Ver segmento" class="icon-action" href="admin_segment_detail.html?codigo=SEG-102" title="Ver segmento"><i class="fa-solid fa-eye"></i></a></td></tr>
+</tbody></table></div>
+</article>
+<div aria-modal="true" class="modal" id="modal-editar-estacion" role="dialog" tabindex="-1"><button aria-label="Cerrar ventana" class="modal-background" type="button"></button><div class="modal-box"><div class="modal-header"><div><span class="modal-eyebrow">INFRAESTRUCTURA</span><h2>Editar estación EST-001</h2></div><button aria-label="Cerrar" class="modal-close" type="button"><i class="fa-solid fa-xmark"></i></button></div><div class="modal-body"><form><div class="form-row"><div class="form-field"><label for="ol-control-0">Nombre</label><input required="" value="Estación Lurín" id="ol-control-0"></div><div class="form-field"><label for="ol-control-1">Ubicación</label><input required="" value="Lima, Perú" id="ol-control-1"></div></div><div class="form-row"><div class="form-field"><label for="ol-control-2">Capacidad de energía</label><input value="500 kW" id="ol-control-2"></div><div class="form-field"><label for="ol-control-3">Estado</label><select id="ol-control-3"><option selected="">Operativa</option><option>En mantenimiento</option><option>Inactiva</option></select></div></div><div class="form-actions"><button class="danger-button modal-cancel-button" type="button">Cancelar</button><button class="primary-button confirm-static-update" data-update-label="estación" type="button">Guardar cambios</button></div></form></div></div></div>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+</body></html>

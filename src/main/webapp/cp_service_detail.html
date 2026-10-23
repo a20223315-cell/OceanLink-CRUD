@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>OceanLink - Detalle del servicio</title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">MENÚ PRINCIPAL</div>
+<nav>
+<a aria-label="Capacidad" href="cp_capacity.html" title="Capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span><span class="nav-label">Capacidad</span></a>
+<a aria-label="Solicitudes" href="cp_requests.html" title="Solicitudes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="nav-label">Solicitudes</span></a>
+<a aria-label="Clientes" href="ClienteServlet" title="Clientes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-building"></i></span><span class="nav-label">Clientes</span></a>
+<a aria-label="Servicios" class="active" href="ServicioServlet" title="Servicios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-network-wired"></i></span><span class="nav-label">Servicios</span></a>
+</nav>
+<div class="sidebar-footer">
+<a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión">
+<i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span>
+</a>
+</div>
+</aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">Sistema de Gestión de Red</strong></div>
+<div class="session-data">
+<span class="role">Planificador de capacidad</span>
+<span class="user" title="Matías Aguilar · Planificador de capacidad">Matías Aguilar <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading"><h1>Detalle del servicio SRV-901</h1><p>Consulte la capacidad contratada, el estado y la ruta asignada al servicio.</p></div>
+<div class="back-row"><a class="secondary-button" href="ServicioServlet"><i class="fa-solid fa-arrow-left"></i> Volver a servicios</a></div>
+<article class="panel">
+<div class="panel-heading"><div><h2>Servicio SRV-901</h2><p>Servicio empresarial activo.</p></div><button class="danger-button" type="button"><i class="fa-solid fa-ban"></i> Cancelar servicio</button></div>
+<div class="detail-grid">
+<div class="detail-item"><strong>Cliente</strong><span>CLI-001 · Telco Global</span></div>
+<div class="detail-item"><strong>Estado</strong><span class="status ok">Activo</span></div>
+<div class="detail-item"><strong>Capacidad contratada</strong><span>2 Tbps</span></div>
+<div class="detail-item"><strong>Fecha de activación</strong><span>15/01/2026</span></div>
+<div class="detail-item"><strong>Origen</strong><span>Estación Lurín</span></div>
+<div class="detail-item"><strong>Destino</strong><span>Estación Valparaíso</span></div>
+</div>
+<p class="helper-note">Al cancelar el servicio, la capacidad utilizada se libera y vuelve a estar disponible.</p></article>
+<article class="panel">
+<div class="panel-heading"><div><h2>Ruta asignada</h2><p>Segmentos utilizados por el servicio.</p></div></div>
+<div class="route-visual"><div class="route-node"><div class="node-icon"><i class="fa-solid fa-anchor"></i></div>Lurín (EST-001)</div><div class="route-line"><span>SEG-101</span></div><div class="route-node"><div class="node-icon"><i class="fa-solid fa-anchor"></i></div>Valparaíso (EST-002)</div></div><div class="route-validation-summary"><i class="fa-solid fa-circle-check"></i><span><strong>Ruta habilitada</strong><small>Todos los segmentos de la ruta se encuentran disponibles para el servicio.</small></span></div>
+<div class="table-container" style="margin-top:26px"><table><thead><tr><th>Código</th><th class="cell-center">Capacidad consumida (Tbps)</th><th class="cell-center">Estado operativo</th></tr></thead><tbody><tr><td>SEG-101</td><td class="cell-center">2</td><td class="cell-center"><span class="status ok">Operativo</span></td></tr></tbody></table></div>
+</article>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+</body></html>

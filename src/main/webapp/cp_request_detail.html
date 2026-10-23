@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>
+(function(){
+  try {
+    if (window.matchMedia('(min-width: 901px)').matches && localStorage.getItem('oceanlink.final.sidebarCollapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed-init');
+    }
+  } catch (e) {}
+})();
+</script>
+<title>OceanLink - Detalle de solicitud</title>
+
+
+
+<link href="css/fonts.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/final.css" rel="stylesheet">
+<link href="css/vendor/fontawesome.css" rel="stylesheet">
+</head>
+<body class="app-page"><noscript><p class="report-note">JavaScript está deshabilitado. Actívalo para usar formularios, filtros y reportes.</p></noscript>
+<div class="layout">
+<aside aria-label="Navegación principal" class="sidebar" id="sidebar">
+<div class="brand">
+<span class="brand-identity"><img class="brand-logo brand-logo-light" src="assets/oceanlink-logo-sidebar.svg" alt="OceanLink"></span>
+<button aria-controls="sidebar" aria-expanded="true" aria-label="Contraer menú lateral" class="sidebar-collapse-toggle" title="Contraer menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-angles-left"></i></button>
+</div>
+<div class="menu-title">MENÚ PRINCIPAL</div>
+<nav>
+<a aria-label="Capacidad" href="cp_capacity.html" title="Capacidad"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span><span class="nav-label">Capacidad</span></a>
+<a aria-label="Solicitudes" class="active" href="cp_requests.html" title="Solicitudes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="nav-label">Solicitudes</span></a>
+<a aria-label="Clientes" href="ClienteServlet" title="Clientes"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-building"></i></span><span class="nav-label">Clientes</span></a>
+<a aria-label="Servicios" href="ServicioServlet" title="Servicios"><span aria-hidden="true" class="nav-icon"><i class="fa-solid fa-network-wired"></i></span><span class="nav-label">Servicios</span></a>
+</nav>
+<div class="sidebar-footer">
+<a aria-label="Cerrar sesión" class="sidebar-logout" href="login.html" title="Cerrar sesión">
+<i aria-hidden="true" class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span>
+</a>
+</div>
+</aside><button aria-label="Cerrar menú lateral" class="sidebar-overlay" tabindex="-1" type="button"></button>
+<main class="main-content">
+<header class="topbar"><div class="topbar-left"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú lateral" class="sidebar-mobile-toggle" title="Abrir menú lateral" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button><strong class="system-name">Sistema de Gestión de Red</strong></div>
+<div class="session-data">
+<span class="role">Planificador de capacidad</span>
+<span class="user" title="Matías Aguilar · Planificador de capacidad">Matías Aguilar <span aria-hidden="true" class="user-mark">U</span></span>
+</div>
+</header>
+<section class="content">
+<div class="page-heading"><h1 data-request-title="">Detalle de solicitud REQ-501</h1><p>Evalúe la viabilidad y ejecute únicamente la acción válida para el estado actual.</p></div>
+<div class="back-row"><a class="secondary-button" href="cp_requests.html"><i class="fa-solid fa-arrow-left"></i> Volver a solicitudes</a></div>
+<article class="panel request-flow-panel">
+<div class="request-status-header"><div><span class="section-kicker">FLUJO DE SOLICITUD</span><h2>Estado y avance</h2></div><span class="status info" data-request-current-badge="">Registrada</span></div>
+<div aria-label="Flujo principal de la solicitud" class="request-stepper">
+<div class="request-step" data-request-step="Registrada"><span class="request-step-dot"><i class="fa-solid fa-check"></i></span><strong>Registrada</strong><small>Solicitud recibida</small></div>
+<div class="request-step" data-request-step="En evaluación"><span class="request-step-dot">2</span><strong>En evaluación</strong><small>Viabilidad y ruta</small></div>
+<div class="request-step" data-request-step="Aprobada"><span class="request-step-dot">3</span><strong>Aprobada</strong><small>Puede reservarse</small></div>
+<div class="request-step" data-request-step="Provisionada"><span class="request-step-dot">4</span><strong>Provisionada</strong><small>Capacidad reservada</small></div>
+<div class="request-step" data-request-step="Activa"><span class="request-step-dot">5</span><strong>Activa</strong><small>Servicio habilitado</small></div>
+</div>
+<div class="request-exception-state" data-request-exception="" hidden=""></div>
+<div aria-label="Cómo interpretar el flujo" class="flow-help-strip">
+<span><i class="fa-solid fa-check"></i> Etapa completada</span>
+<span><i class="fa-solid fa-circle"></i> Estado actual</span>
+<span><i class="fa-regular fa-circle"></i> Etapa pendiente</span>
+<span><i class="fa-solid fa-code-branch"></i> Rechazada y Pendiente por capacidad son salidas alternativas</span>
+</div>
+</article>
+<article class="panel">
+<div class="panel-heading"><div><h2>Datos de la solicitud</h2><p>Información registrada por el Planificador de capacidad.</p></div></div>
+<div class="detail-grid request-detail-grid">
+<div class="detail-item"><strong>Cliente</strong><span data-request-client="">CLI-001 · Telco Global</span></div>
+<div class="detail-item"><strong>Capacidad requerida</strong><span data-request-capacity="">500 Gbps</span></div>
+<div class="detail-item"><strong>Origen</strong><span data-request-origin="">Estación Lurín</span></div>
+<div class="detail-item"><strong>Destino</strong><span data-request-destination="">Estación Panamá</span></div>
+<div class="detail-item"><strong>Fecha de registro</strong><span data-request-date="">28/08/2026</span></div>
+<div class="detail-item"><strong>Viabilidad</strong><span class="status ok" data-request-viability="">Viable</span></div>
+</div>
+</article>
+<article class="panel" data-request-evaluation="">
+<div class="panel-heading"><div><h2>Evaluación de ruta y capacidad</h2><p>La ruta propuesta puede incluir uno o varios segmentos. La capacidad requerida debe estar disponible en todos ellos.</p></div><span class="route-health ok"><i class="fa-solid fa-circle-check"></i> Ruta viable</span></div>
+<div class="route-summary"><div><span>Ruta candidata</span><strong data-request-route="">SEG-102 → SEG-205</strong></div><div><span>Capacidad limitante</span><strong data-route-bottleneck="">1 Tbps disponible</strong></div><div><span>Capacidad requerida</span><strong data-route-required="">500 Gbps</strong></div></div>
+<div class="table-container"><table class="compact-table"><thead><tr><th>Orden</th><th>Segmento</th><th>Tramo</th><th class="cell-center">Disponible (Tbps)</th><th class="cell-center">Estado</th></tr></thead><tbody data-route-segments=""><tr><td>1</td><td>SEG-102</td><td>Lurín - Buenaventura</td><td class="cell-center">18</td><td class="cell-center"><span class="status ok">Operativo</span></td></tr><tr><td>2</td><td>SEG-205</td><td>Buenaventura - Panamá</td><td class="cell-center">1</td><td class="cell-center"><span class="status warning">Degradado</span></td></tr></tbody></table></div>
+</article>
+<article class="panel request-decision-panel">
+<div class="request-guidance"><div class="guidance-icon"><i class="fa-solid fa-compass"></i></div><div><strong data-request-guidance-title="">Solicitud en evaluación</strong><p data-request-guidance="">Revise la ruta y la capacidad. Si es viable, apruebe la solicitud; si no hay capacidad, puede dejarla pendiente o rechazarla.</p></div></div>
+<div class="detail-actions request-actions" data-request-actions="">
+<button class="primary-button" data-request-action="start" hidden="" type="button"><i class="fa-solid fa-play"></i> Evaluar solicitud</button>
+<button class="primary-button" data-request-action="approve" type="button"><i class="fa-solid fa-check"></i> Aprobar solicitud</button>
+<button class="secondary-button" data-request-action="pending" type="button"><i class="fa-regular fa-clock"></i> Pendiente por capacidad</button>
+<button class="danger-button" data-request-action="reject" type="button"><i class="fa-solid fa-xmark"></i> Rechazar</button>
+<button class="primary-button" data-request-action="reserve" hidden="" type="button"><i class="fa-solid fa-bookmark"></i> Reservar capacidad</button>
+<button class="primary-button" data-request-action="activate" hidden="" type="button"><i class="fa-solid fa-bolt"></i> Activar servicio</button>
+<button class="secondary-button" data-request-action="reevaluate" hidden="" type="button"><i class="fa-solid fa-rotate"></i> Reevaluar capacidad</button>
+<a class="secondary-button" data-request-service-link="" hidden="" href="ServicioServlet"><i class="fa-solid fa-network-wired"></i> Ver servicio creado</a>
+</div>
+</article>
+<div aria-modal="true" class="modal" id="modal-reserva" role="dialog" tabindex="-1"><button aria-label="Cerrar ventana" class="modal-background" type="button"></button><div class="modal-box modal-wide"><div class="modal-header"><div><span class="modal-eyebrow">RESERVA DE CAPACIDAD</span><h2>Confirmar reserva de la ruta</h2></div><button aria-label="Cerrar" class="modal-close" type="button"><i class="fa-solid fa-xmark"></i></button></div><div class="modal-body"><p class="modal-intro">La misma capacidad se reservará en <strong>cada segmento</strong> de la ruta. La solicitud solo podrá pasar a Provisionada cuando la reserva sea válida.</p><div class="reservation-route-list"><div><span>SEG-102</span><small>Lurín - Buenaventura</small><strong>18 Tbps disponibles</strong></div><i class="fa-solid fa-arrow-right"></i><div><span>SEG-205</span><small>Buenaventura - Panamá</small><strong>1 Tbps disponible</strong></div></div><div class="form-row"><div class="form-field"><label for="ol-control-0">Capacidad a reservar</label><div class="input-with-unit"><input class="request-reserve-capacity" min="0.1" required="" step="0.1" type="number" value="0.5" id="ol-control-0"><span>Tbps</span></div><small class="helper-note">No puede superar la capacidad disponible del segmento limitante.</small></div><div class="form-field"><label>Resultado de validación</label><div class="computed-state ok"><i class="fa-solid fa-circle-check"></i><span>Capacidad disponible en todos los segmentos</span></div></div></div><div class="form-actions"><button class="danger-button modal-cancel-button" type="button">Cancelar</button><button class="primary-button" data-confirm-reservation="" type="button"><i class="fa-solid fa-bookmark"></i> Confirmar reserva</button></div></div></div></div>
+</section>
+</main>
+</div>
+<script defer="" src="js/oceanlink-seed.js"></script>
+<script defer="" src="js/oceanlink-data.js"></script>
+<script defer="" src="js/oceanlink-view.js"></script>
+<script defer="" src="js/oceanlink.js"></script>
+<script defer="" src="js/vendor/pdf-lib.min.js"></script>
+<script defer="" src="js/oceanlink-reports.js"></script>
+<script defer="" src="js/oceanlink-final.js"></script>
+</body></html>
